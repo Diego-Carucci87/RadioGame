@@ -1,0 +1,56 @@
+# Animal Walkie‑Talkie — MVP v0.1
+
+## 1 · Purpose
+Give a 3‑year‑old 30 seconds of delight while they blurt “¡Tigre!” into the mic and see a roaring tiger gif.
+
+## 2 · Problem Statement
+Most toddler ed‑apps are bloated, require sign‑up, and fail when speech‑rec misfires.  
+We need < 1 MB, works offline, zero data retention.
+
+## 3 · Goal & Success Metrics
+| Metric | Target for MVP |
+|--------|----------------|
+| Time‑to‑interactive | < 2 s on 3G |
+| Successful recognition rate (quiet room) | ≥ 60 % |
+| Kid smiles / 2‑minute session | ≥ 3 |
+| Parent feedback 👍 after first playtest | ≥ 70 % |
+
+## 4 · Personas
+* **Luna (3)** – taps big button, yells animal names.
+* **Carlos (35)** – wants 90‑second distraction while cooking.
+
+## 5 · Key Features (MUST only)
+1. Push‑to‑talk mic button (Web Speech API, Spanish locale).
+2. Six animals: tigre, perro, caballo, vaca, gallina, gato.
+3. Success: show PNG/GIF + play < 3 s sound + vibrate.
+4. Fail: fun “¿Otra vez?” text + shake effect.
+5. Idle after 15 s: random prompt animation.
+
+## 6 · Out of scope (MVP)
+* Data storage, analytics, account system.
+* Turkish language pack.
+* Advanced pronunciation scoring.
+
+## 7 · Tech Stack
+Vanilla **HTML + JS (ES6)**, in‑page CSS.  
+Assets served locally; no CDN or server dependencies.
+
+## 8 · Assets
+| File | Type | Max Size |
+|------|------|----------|
+| `tigre.png` | 300 × 300 px | 45 KB |
+| `tigre.mp3` | 44 kHz mono | 25 KB |
+*(repeat for each animal)*
+
+## 9 · Risks & Mitigations
+* **Mic permission loop** – request once, cache result.  
+* **Speech‑rec errors** – confidence ≥ 0.1, add fallback tap menu if all else fails.
+
+## 10 · Timeline
+| Task | Owner | ETA |
+|------|-------|-----|
+| Import Figma → tokens.css | Designer (you) | +1 h |
+| Scaffold files via Cursor | Dev agent | +1 h |
+| Hook speech / assets | Dev agent | +1 h |
+| Playtest with 2 kids | You | tonight |
+
